@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,15 +15,22 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
 
     Animator animPlayer;
-
+    [SerializeField] bool dead = false;
+    CapsuleCollider2D playerCollider;
 
     private void Awake()
     {
         animPlayer = GetComponent<Animator>();
         rbPlayer = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<CapsuleCollider2D>();
+    }
+    private void Start()
+    {
+        dead = false; 
     }
     private void Update()
     {
+        if(dead) return;
         inFloor = Physics2D.Linecast(transform.position, groundCheck.position, groundLayer);
         Debug.DrawLine(transform.position, groundCheck.position, Color.blue);
 
@@ -41,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
+        if (dead) return;
         float xMove = Input.GetAxis("Horizontal");
         rbPlayer.velocity = new Vector2(xMove * speed, rbPlayer.velocity.y);
 
@@ -56,11 +65,34 @@ public class PlayerMovement : MonoBehaviour
     }
     void JumpPlayer()
     {
+
         if (isJump)
         {
             rbPlayer.velocity = Vector2.up * jumpForce;
             isJump = false;
         }
+    }
+
+    public void Death()
+    {
+        StartCoroutine(DeathCorotine());
+
+    }
+
+    IEnumerator DeathCorotine()
+    {
+        if (!dead)
+        {
+            dead = true;
+            animPlayer.SetTrigger("Death");
+            yield return new WaitForSeconds(0.5f);
+            rbPlayer.velocity = Vector2.zero;
+            rbPlayer.AddForce(Vector2.up * 8f, ForceMode2D.Impulse);
+            playerCollider.isTrigger = true;
+            Invoke("RestartGame", 2.5f);
+
+        }
+        
     }
 }
 

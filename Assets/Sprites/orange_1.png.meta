@@ -265,7 +265,7 @@ TextureImporter:
         width: 30
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,6 +273,27 @@ TextureImporter:
       bones: []
       spriteID: 831f82da162e38f43924ebead52be03b
       internalID: 19155363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Morreu
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 69
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af6514fc2f48c614f99b8da68ce97a1a
+      internalID: -324408293
       vertices: []
       indices: 
       edges: []
@@ -290,6 +311,7 @@ TextureImporter:
     nameFileIdTable:
       Jum: 19155363
       Jump: -1809760261
+      Morreu: -324408293
       Tico: 923513990
       Walk_01: -1266161564
       Walk_02: 860496817

@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 9045068560747447454}
   - component: {fileID: 7355185948733465067}
   - component: {fileID: 7652677460012220278}
-  m_Layer: 0
+  - component: {fileID: 808589689713836286}
+  m_Layer: 7
   m_Name: Ant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +170,7 @@ MonoBehaviour:
   point2: {fileID: 7826194157587178182}
   layer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 136
   isColliding: 0
 --- !u!95 &7652677460012220278
 Animator:
@@ -192,6 +193,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &808589689713836286
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3589871867032770330}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.37, y: 0.31}
+    newSize: {x: 0.37, y: 0.31}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.37, y: 0.31}
+  m_EdgeRadius: 0
 --- !u!1 &4665060897662512494
 GameObject:
   m_ObjectHideFlags: 0
